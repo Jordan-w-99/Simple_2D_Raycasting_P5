@@ -1,43 +1,70 @@
 const obstacles = [
   {
     x1: 50,
-    y1: 55,
+    y1: 50,
     x2: 350,
-    y2: 61
+    y2: 50
   },
   {
     x1: 50,
     y1: 50,
-    x2: 100,
-    y2: 150
+    x2: 50,
+    y2: 350
   },
   {
     x1: 50,
-    y1: 370,
+    y1: 350,
     x2: 350,
-    y2: 70,
+    y2: 350,
   },
   {
-    x1: 50,
-    y1: 55,
-    x2: 51,
-    y2: 360,
+    x1: 350,
+    y1: 50,
+    x2: 350,
+    y2: 100,
+  },
+  {
+    x1: 350,
+    y1: 150,
+    x2: 350,
+    y2: 350,
+  },
+  {
+    x1: 350,
+    y1: 160,
+    x2: 250,
+    y2: 160,
+  },
+  {
+    x1: 100,
+    y1: 50,
+    x2: 200,
+    y2: 240,
+  },
+  {
+    x1: 250,
+    y1: 250,
+    x2: 260,
+    y2: 300,
   },
 ]
 
-let user = []
+let user = [];
+let facing = 0;
 
 
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(windowWidth, windowHeight);
 }
 
 function draw() {
-  background(220);
+  // background();
+  clear();
+
+  
 
   updateUserRays();
   drawUserRays();
-
 
   for (let o of obstacles) {
     line(o.x1, o.y1, o.x2, o.y2);
@@ -47,7 +74,7 @@ function draw() {
 function updateUserRays() {
   user = [];
 
-  const rad = 100;
+  const rad = 200;
   const inc = TWO_PI / 2048;
 
   for (let i = 0; i < TWO_PI; i += inc) {
@@ -76,7 +103,7 @@ function updateUserRays() {
 function drawUserRays() {
   for (let r of user) {
     push();
-
+    stroke(100, 50);
     line(r.x1, r.y1, r.x2, r.y2);
     pop();
   }
