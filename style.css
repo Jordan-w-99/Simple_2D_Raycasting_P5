@@ -1,8 +1,28 @@
 html, body {
   margin: 0;
   padding: 0;
-  background-color: blue;
+  background-color: #151515;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: wheat;
 }
+
+#canvas-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#page-title{
+  width: 100%;
+  text-align: center;
+}
+
+#page-footer{
+  width: 100%;
+  text-align: center;
+}
+
 canvas {
   display: block;
+  box-shadow: 0 0 0 3px black;
 }
